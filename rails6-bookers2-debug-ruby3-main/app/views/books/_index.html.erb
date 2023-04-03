@@ -5,6 +5,7 @@
       <th>Title</th>
       <th>Opinion</th>
       <th></th>
+      <th></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -31,6 +32,9 @@
           <% end %>
          </p>
          <% end %>
+        </td>
+        <td>
+          <p><%= link_to "#{book.post_comments.count} コメント", book_path(book.id) %></p>
         </td>
       </tr>
     <% end %>
