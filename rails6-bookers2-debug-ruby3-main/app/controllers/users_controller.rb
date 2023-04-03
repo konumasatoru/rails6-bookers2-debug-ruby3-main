@@ -22,9 +22,10 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to user_path(current_user), notice: "You have updated user successfully."
+      flash[:notice] = "You have updated user successfully."
+      redirect_to user_path(current_user)
     else
-      redirect_to edit_user_path(@user.id)
+      render :edit
     end
   end
 
