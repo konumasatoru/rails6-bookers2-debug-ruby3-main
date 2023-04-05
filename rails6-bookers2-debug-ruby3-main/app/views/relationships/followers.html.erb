@@ -1,4 +1,6 @@
-<p>フォロワー一覧</p><br/>
-  <% @users.each do |user| %>
-  <%= user.name %>
+<h2>Follower Users</h2>
+<% if @users.exists? %>
+  <%= render '/users/index', users: @users %>
+<% else %>
+  <p>ユーザーはいません</p>
 <% end %>
